@@ -33,7 +33,7 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = "10.12"
   s.watchos.deployment_target = "3.0"
 
-  s.source       = { :git => "https://github.com/onevcat/Kingfisher.git", :tag => s.version }
+  s.source       = { :git => "https://github.com/onevcat/Kingfisher.git", :tag => "#{s.version}-privacyinfo" }
 
   s.default_subspecs = "Core"
 
@@ -44,6 +44,8 @@ Pod::Spec.new do |s|
     sp.source_files  = ["Sources/**/*.swift", "Sources/Kingfisher.h"]
     sp.exclude_files = ["Sources/SwiftUI/**"]
   end
+
+  s.resource_bundles = {"Kingfisher" => ["Sources/PrivacyInfo.xcprivacy"]}
 
   s.subspec "SwiftUI" do |sp|
     sp.source_files = ["Sources/SwiftUI/**"]
